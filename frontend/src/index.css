@@ -1,0 +1,138 @@
+/**
+ * index.css - Estilos globales y sistema de diseño de HemoApp
+ * 
+ * ¿Qué hace?
+ * - Define las variables CSS personalizadas (custom properties) del sistema de diseño
+ * - Importa Tailwind CSS para utility classes
+ * - Establece la paleta de colores de la aplicación
+ * 
+ * ¿Para qué sirve?
+ * - Mantener consistencia de colores en toda la aplicación
+ * - Facilitar cambios de tema (light/dark)
+ * - Proporcionar variables reutilizables para componentes
+ * 
+ * Paleta de colores HemoApp:
+ * - Primary: Vino/Burgundy (#942044) - Color principal de marca
+ * - Accent: Rojo brillante (#E5203A) - Para acciones importantes
+ * - Background: Rosa muy claro (#FFDBE8) - Fondo general
+ * - Secondary: Rosa claro (#FF94B2) - Elementos secundarios
+ * 
+ * Todas las variables CSS usan el formato HSL para facilitar modificaciones
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Colores personalizados del sistema HemoApp */
+    --negro-oscuro: 0 68% 7%; /* #200606 */
+    --rosa-muy-claro: 338 100% 93%; /* #FFDBE8 */
+    --marca-principal-vino: 341 64% 35%; /* #942044 */
+    --rosa-claro: 343 100% 79%; /* #FF94B2 */
+    --rojo-vino-oscuro: 351 94% 13%; /* #6B0113 */
+    --marron-muy-oscuro: 350 98% 21%; /* #41020B */
+    --acento-rojo-brillante: 352 79% 51%; /* #E5203A */
+
+    /* Variables del sistema usando los nuevos colores */
+    --background: var(--rosa-muy-claro);
+    --foreground: var(--rojo-vino-oscuro);
+
+    --card: 0 0% 100%;
+    --card-foreground: var(--rojo-vino-oscuro);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--rojo-vino-oscuro);
+
+    --primary: var(--marca-principal-vino);
+    --primary-foreground: var(--rosa-muy-claro);
+
+    --secondary: var(--rosa-claro);
+    --secondary-foreground: var(--rojo-vino-oscuro);
+
+    --muted: var(--rosa-muy-claro);
+    --muted-foreground: 341 40% 50%;
+
+    --accent: var(--acento-rojo-brillante);
+    --accent-foreground: var(--rosa-muy-claro);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 338 100% 93%;
+
+    --border: 343 100% 85%;
+    --input: 338 100% 93%;
+    --ring: 341 64% 35%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Tema oscuro usando los nuevos colores */
+    --background: var(--negro-oscuro);
+    --foreground: var(--rosa-muy-claro);
+
+    --card: var(--marron-muy-oscuro);
+    --card-foreground: var(--rosa-muy-claro);
+
+    --popover: var(--marron-muy-oscuro);
+    --popover-foreground: var(--rosa-muy-claro);
+
+    --primary: var(--marca-principal-vino);
+    --primary-foreground: var(--rosa-muy-claro);
+
+    --secondary: var(--marron-muy-oscuro);
+    --secondary-foreground: var(--rosa-muy-claro);
+
+    --muted: var(--rojo-vino-oscuro);
+    --muted-foreground: var(--rosa-claro);
+
+    --accent: var(--acento-rojo-brillante);
+    --accent-foreground: var(--rosa-muy-claro);
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: var(--rosa-muy-claro);
+
+    --border: var(--marron-muy-oscuro);
+    --input: var(--marron-muy-oscuro);
+    --ring: var(--acento-rojo-brillante);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

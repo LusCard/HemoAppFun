@@ -11,6 +11,7 @@ import RequestBloodPage from "./pages/RequestBloodPage";
 import { Toaster } from "./components/ui/toaster";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import { InstitutionsRoleDashboard } from "./pages/InstitutionsRoleDashboard";
+import VerifyEmailPage from "./pages/VerifyEmailPage";
 
 // Componente auxiliar para proteger rutas de forma más limpia
 const ProtectedRoute = ({ children }) => {
@@ -67,6 +68,14 @@ function AppRoutes() {
         element={
           <PublicRoute>
             <RegisterPage />
+          </PublicRoute>
+        }
+      />
+      <Route
+        path="/verify-email"
+        element={
+          <PublicRoute>
+            <VerifyEmailPage />
           </PublicRoute>
         }
       />
